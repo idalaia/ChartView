@@ -9,7 +9,7 @@
 import SwiftUI
 
 public struct BarChartCell : View {
-  var value: Double
+  @State var value: Double
   var index: Int = 0
   var width: Float
   var numberOfDataPoints: Int
@@ -31,10 +31,8 @@ public struct BarChartCell : View {
     .onAppear(){
       self.scaleValue = self.value
     }
-    .onReceive(self.$touchLocation, perform: { _ in
-      self.scaleValue = self.value
-    })
-      .animation(Animation.spring().delay(self.touchLocation < 0 ?  Double(self.index) * 0.04 : 0))
+      
+    .animation(Animation.spring().delay(self.touchLocation < 0 ?  Double(self.index) * 0.04 : 0))
   }
 }
 
