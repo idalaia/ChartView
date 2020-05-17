@@ -30,6 +30,7 @@ public struct BarChartCell : View {
     .scaleEffect(CGSize(width: 1, height: self.scaleValue), anchor: .bottom)
     .onAppear(){
       self.scaleValue = self.value
+      print("Scale: \(self.scaleValue)")
     }
       
     .animation(Animation.spring().delay(self.touchLocation < 0 ?  Double(self.index) * 0.04 : 0))
