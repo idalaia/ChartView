@@ -9,7 +9,7 @@
 import SwiftUI
 
 public struct BarChartCell : View {
-  var value: Double
+  @State var value: Double = 0
   var index: Int = 0
   var width: Float
   var numberOfDataPoints: Int
