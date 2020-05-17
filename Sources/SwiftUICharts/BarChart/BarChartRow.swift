@@ -37,6 +37,7 @@ public struct BarChartRow : View {
     }
     
     func normalizedValue(index: Int) -> Double {
+      print("NormalizedValue: \(Double(self.data[index])/Double(self.maxValue))")
         return Double(self.data[index])/Double(self.maxValue)
     }
 }

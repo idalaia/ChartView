@@ -9,7 +9,7 @@
 import SwiftUI
 
 public struct BarChartCell : View {
-  @State var value: Double
+  var value: Double
   var index: Int = 0
   var width: Float
   var numberOfDataPoints: Int
@@ -27,6 +27,7 @@ public struct BarChartCell : View {
         .fill(LinearGradient(gradient: gradient?.getGradient() ?? GradientColor(start: accentColor, end: accentColor).getGradient(), startPoint: .bottom, endPoint: .top))
     }
     .frame(width: CGFloat(self.cellWidth))
+      print("scaleValue: \(scaleValue)")
     .scaleEffect(CGSize(width: 1, height: self.scaleValue), anchor: .bottom)
     .onAppear(){
       self.scaleValue = self.value
